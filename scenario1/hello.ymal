@@ -1,1 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: first-fl
+  annotations:
+    scenarios.ai.sap.com/description: "First flow in SAP AI Core"
+    scenarios.ai.sap.com/name: "Scenario1"
+    executables.ai.sap.com/description: "Send Message"
+    executables.ai.sap.com/name: "Hi Logali"
+  labels:
+    scenarios.ai.sap.com/id: "scenario1"
+    ai.sap.com/version: "2.0"
+spec:
+  entrypoint: pipeline
+  templates:
+  - name: pipeline
+    steps:
+    - - name: greet
+        template: greeter
 
+  - name: greeter
+    container:
+      image: docker.io/python:latest
+      command:
+        - python3
+        - '-c'
+      args:
+       - |
+        print("HI Community LogaliGroup - SAP AI Core")
