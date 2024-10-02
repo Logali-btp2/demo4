@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: WorkflowTemplate
 metadata:
-  name: first-flow  este nombre debe ser unico
+  name: first-flow
   annotations:
     scenarios.ai.sap.com/description: "First flow in SAP AI Core"
     scenarios.ai.sap.com/name: "Scenario1"
